@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'trackr',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'trackr_server',
 ]
 
 MIDDLEWARE = [
@@ -96,7 +96,7 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Patgoral/trackr-server',
+        'NAME': 'Patgoral/trackr_server',
         'USER': 'Patgoral',
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': 'db.bit.io',
@@ -144,7 +144,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'trackr.User'
+AUTH_USER_MODEL = 'trackr_server.User'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",

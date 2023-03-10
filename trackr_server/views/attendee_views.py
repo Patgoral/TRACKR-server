@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import generics, status
 from rest_framework.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
-from django.middleware.csrf import get_token
+
 
 from ..models.attendee import Attendee
 from ..serializers import AttendeeSerializer, AttendeeWriteSerializer
