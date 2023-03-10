@@ -6,7 +6,19 @@ from django.shortcuts import get_object_or_404
 
 
 from ..models.attendee import Attendee
-from ..serializers import AttendeeSerializer, AttendeeWriteSerializer
+from ..serializers import AttendeeSerializer, AttendeeWriteSerializer, AttendeeReadSerializer
+
+
+class AttendeesAll(generics.ListCreateAPIView):
+    serializer_class = AttendeeSerializer
+
+    def get(self, request):
+        attendees = Attendee.objects.all()
+        serializer = AttendeeReadSerializer(attendees, many=True)
+        return Response({'attendees': serializer.data})
+
+
+
 
 class Attendees(generics.ListCreateAPIView):
 

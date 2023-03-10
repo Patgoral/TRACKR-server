@@ -14,7 +14,11 @@ class AttendeeWriteSerializer(serializers.ModelSerializer):
         model = Attendee
         fields = "__all__"
 
-
+class AttendeeReadSerializer(serializers.ModelSerializer):
+    attendee = serializers.StringRelatedField()
+    class Meta:
+        model = Attendee
+        fields ='__all__'
 
 
 class UserSerializer(serializers.ModelSerializer):
